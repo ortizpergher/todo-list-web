@@ -1,7 +1,7 @@
 import { Grid, Checkbox, Typography, Button } from '@material-ui/core';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { remove, update } from '../../store/modules/tasks/actions';
+import { update } from '../../store/modules/tasks/actions';
 import { useStyles } from './styles';
 import api from '../../services/api'
 

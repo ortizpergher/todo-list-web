@@ -14,17 +14,10 @@ export default function Home() {
     const [task, setTask] = useState([]);
     const [count, setCount] = useState(null)
     const dispacth = useDispatch();
-    const tasks = useSelector(state => state.tasks);
     const [invalidCredentials, setInvalidCredentials] = useState(false);
     const [remain, setRemain] = useState(0)
     
-    
-    // tasks.forEach((task, index) => {
-        //     list.push(<Linha task={task.title} index={index} checked={task.checked} key={task.title} />);
-        // });
-        
-        
-        // let listTasks = null;
+
 
         async function reqTasks() {
             try {
@@ -32,8 +25,8 @@ export default function Home() {
                 setTask(response.data.rows);
                 setCount(response.data.count)
 
-                tasks.forEach(item => {
-                    if (!item.checked) {
+                response.data.rows.forEach(item => {
+                    if (!item.done) {
                         setRemain(current => current + 1)
                     }
                 });
@@ -43,12 +36,11 @@ export default function Home() {
             }
         }
 
+
         useEffect(() => {
             reqTasks();
             
         }, [])
-
-        console.log(task)
 
         async function onSave(event) {
             event.preventDefault();
@@ -68,7 +60,6 @@ export default function Home() {
                     text: title,
                     done: false,
                 });
-                console.log(response)
                 if (response.status === 201) reqTasks()
                 if (response) {
                     dispacth(add({
@@ -82,6 +73,7 @@ export default function Home() {
                 setInvalidCredentials(true);
             }
         }
+
 
   return (
     <Grid container justify="center" alignContent="center" className={classes.bg}>
