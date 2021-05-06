@@ -1,0 +1,53 @@
+- iniciar o projeto e instalar as dependencias
+	- npx create-react-app todo-list
+	- yarn add react-router-dom
+	- yarn add @material-ui/core
+	- yarn add typeface-roboto
+	- yarn add redux
+	- yarn add react-redux
+	- yarn add redux-persist
+
+- limpar os códigos que padrões
+	- tudo dentro da pasta src 
+	- deixar somente o index.html na public
+
+- criar um index.js e um app.js
+	- index.js: rederizar o componente app.js
+	- app.js: setar as configurações
+		- configurar o material ui
+		- configurar redux
+		- chamada das rotas
+		- qualquer outra config
+
+- criar estrutura de pastas
+	- criar pages
+	- criar components
+
+- criar rotas
+	- importar elementos do reac-router-dom
+	- importar as pages
+
+- criar a home
+	- criar o component Home
+
+- criar o layout da página
+	- fazer o html
+
+- criar o(s) componente(s)
+	- criar o componente "linha" do todo
+
+- criar a estrutura do redux
+	- criar actions
+	- criar redux
+	- importar no combiner
+
+- testar se tudo está ok
+	- rodar yarn start
+
+- adicionar o evento de click
+	- buscar dados do input
+	- salvar no redux
+    
+- ler dados do redux, e listar na tela
+- popular o "count" de dados
+- adicionar o evento de remover item
